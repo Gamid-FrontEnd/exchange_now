@@ -1,0 +1,6 @@
+@import './components/mixin_var.scss';
+
+.App {
+    width: 1080px;
+    @include margin_center;
+}
