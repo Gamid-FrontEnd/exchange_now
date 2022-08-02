@@ -11,11 +11,11 @@ export const getRates = createAsyncThunk(
             }
     
             const data = await response.json();
-            //console.log(data);
 
             return data;
+
         } catch (error) {
-            return rejectWithValue(error.message);
+            return rejectWithValue(error.message)
         }
     }
 )
@@ -27,11 +27,7 @@ const ratesNow = createSlice({
     initialState: {
         rates: [],
         error: null,
-        status: null
-    },
-
-    reducers: {
-        
+        status: null,
     },
 
     extraReducers: {
