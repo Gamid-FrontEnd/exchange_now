@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/exchange_now.github.io/static/css/main.197d1e31.css",
-    "main.js": "/exchange_now.github.io/static/js/main.27c7eb6b.js",
+    "main.css": "/exchange_now.github.io/static/css/main.7bef13e7.css",
+    "main.js": "/exchange_now.github.io/static/js/main.30290ff7.js",
     "index.html": "/exchange_now.github.io/index.html",
-    "main.197d1e31.css.map": "/exchange_now.github.io/static/css/main.197d1e31.css.map",
-    "main.27c7eb6b.js.map": "/exchange_now.github.io/static/js/main.27c7eb6b.js.map"
+    "main.7bef13e7.css.map": "/exchange_now.github.io/static/css/main.7bef13e7.css.map",
+    "main.30290ff7.js.map": "/exchange_now.github.io/static/js/main.30290ff7.js.map"
   },
   "entrypoints": [
-    "static/css/main.197d1e31.css",
-    "static/js/main.27c7eb6b.js"
+    "static/css/main.7bef13e7.css",
+    "static/js/main.30290ff7.js"
   ]
 }
