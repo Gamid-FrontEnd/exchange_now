@@ -58,7 +58,7 @@ const Body = () => {
                         secondCurrency.current.value = null
                     }}>
                     {rates.map(rate => 
-                        <option key={rate.buy} value={rate.ccy}>{rate.ccy}</option>
+                        rate.ccy !== 'BTC' && <option key={rate.buy} value={rate.ccy}>{rate.ccy}</option>
                     )}
                     <option value='UAH'>UAH</option>
                 </select>
@@ -76,7 +76,7 @@ const Body = () => {
                         secondCurrency.current.value = null
                     }}>
                     {rates.map(rate => 
-                        <option key={rate.buy} value={rate.ccy}>{rate.ccy}</option>
+                        rate.ccy !== 'BTC' && <option key={rate.buy} value={rate.ccy}>{rate.ccy}</option>
                     )}
                     <option value='UAH'>UAH</option>
                 </select>
