@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/exchange_now.github.io/static/css/main.197d1e31.css",
+    "main.js": "/exchange_now.github.io/static/js/main.27c7eb6b.js",
+    "index.html": "/exchange_now.github.io/index.html",
+    "main.197d1e31.css.map": "/exchange_now.github.io/static/css/main.197d1e31.css.map",
+    "main.27c7eb6b.js.map": "/exchange_now.github.io/static/js/main.27c7eb6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.197d1e31.css",
+    "static/js/main.27c7eb6b.js"
+  ]
+}
