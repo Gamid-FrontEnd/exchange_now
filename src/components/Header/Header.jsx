@@ -22,13 +22,13 @@ const Header = () => {
                 <p>USD</p>
                 {status === 'loading' &&  <p>Loading</p>}
                 {error && <p>{error}</p>}
-                {USD && <p>{float_fix2(USD.buy)/* parseFloat(USD.buy).toFixed(2) */}</p>}
+                {USD && <p>{float_fix2(USD.buy)}</p>}
             </div>
             <div>
                 <p>EUR</p>
                 {status === 'loading' &&  <p>Loading</p>}
                 {error && <p>{error}</p>}
-                {EUR && <p>{float_fix2(EUR.buy)/* parseFloat(EUR.buy).toFixed(2) */}</p>}
+                {EUR && <p>{float_fix2(EUR.buy)}</p>}
             </div>
         </div>
     </div>
