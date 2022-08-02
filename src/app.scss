@@ -3,4 +3,6 @@
 .App {
     width: 1080px;
     @include margin_center;
+
+    font-family: 'Roboto', sans-serif;
 }

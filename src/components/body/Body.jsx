@@ -1,8 +1,9 @@
 import React, { useRef } from 'react'
 import { useSelector } from 'react-redux'
+import { find_ccy, float_fix2 } from '../functions'
 
 import './body.scss'
-import { find_ccy, float_fix2 } from '../functions'
+import exchange from '../img/exchange_img.png'
 
 const Body = () => {
     const rates = useSelector(state => state.rates.rates)
@@ -10,6 +11,7 @@ const Body = () => {
     const secondCurrency = useRef()
     const firsdtSelect = useRef()
     const secondSelect = useRef()
+
 
     let calculateBuyCost = () => {
         if (firsdtSelect.current.value === 'UAH' && secondSelect.current.value !== 'UAH') {
@@ -63,6 +65,8 @@ const Body = () => {
 
                 <input type='text' ref={firstCurrency} placeholder='0' onChange={calculateBuyCost}/>
             </div>
+
+            <img src={exchange} alt='exchange image' />
 
             <div className='currency_box second_currency'>
                 <select 

@@ -31,5 +31,11 @@
             border-radius: 3px;
             border: $bord;
         }
+
+        img {
+            width: 30px;
+            height: auto;
+            @include margin_center();
+        }
     }
 }

@@ -11,6 +11,8 @@
     height: 60px;
     background-color: rgb(0, 37, 148);
     color: white;
+
+    font-style: italic;
 }
 
 .header_current_rate {
@@ -22,6 +24,7 @@
     div {
         p {
             margin: 0;
+            font-style: normal;
         }
     }
 }
