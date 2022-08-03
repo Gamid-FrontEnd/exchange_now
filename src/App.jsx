@@ -80,7 +80,7 @@ function App() {
                     {rates.map(rate => 
                         rate.ccy !== 'BTC' && <option key={rate.buy} value={rate.ccy}>{rate.ccy}</option>
                     )}
-                    <option value='UAH'>UAH</option>
+                    <option value='UAH' selected>UAH</option>
                 </select>
 
                 <input type='text' ref={firstCurrency} placeholder='0' onChange={calculateBuyCost}/>
@@ -100,7 +100,7 @@ function App() {
                     {rates.map(rate => 
                         rate.ccy !== 'BTC' && <option key={rate.buy} value={rate.ccy}>{rate.ccy}</option>
                     )}
-                    <option value='UAH'>UAH</option>
+                    <option value='UAH' selected>UAH</option>
                 </select>
 
                 <input type='text' ref={secondCurrency} placeholder='0' onChange={calculateSellCost}/>
