@@ -27,44 +27,28 @@ function App() {
   const secondSelect = useRef()
 
   let calculateBuyCost = () => {
-        if (firsdtSelect.current.value === 'UAH' && secondSelect.current.value !== 'UAH') {
-            let ccy_buy = find_ccy(rates, secondSelect.current.value)
-            secondCurrency.current.value = (firstCurrency.current.value / float_fix2(ccy_buy.buy)).toFixed(2)
-        } else if (firsdtSelect.current.value !== 'UAH' && secondSelect.current.value === 'UAH') {
-            let ccy_sell = find_ccy(rates, firsdtSelect.current.value)
-            secondCurrency.current.value = (firstCurrency.current.value * float_fix2(ccy_sell.buy)).toFixed(2)
-        } else if (firsdtSelect.current.value === 'UAH' && secondSelect.current.value === 'UAH') {
-            secondCurrency.current.value = firstCurrency.current.value
-        } else if (firsdtSelect.current.value !== 'UAH' && secondSelect.current.value !== 'UAH') {
-            let ccy_buy = find_ccy(rates, secondSelect.current.value)
-            let ccy_sell = find_ccy(rates, firsdtSelect.current.value)
+    let ccy_buy
+    let ccy_sell
+    firsdtSelect.current.value !== 'UAH' ? ccy_sell = float_fix2(find_ccy(rates, firsdtSelect.current.value).buy) : ccy_sell = 1
+    secondSelect.current.value !== 'UAH' ? ccy_buy = float_fix2(find_ccy(rates, secondSelect.current.value).buy) : ccy_buy = 1
 
-            secondCurrency.current.value = (firstCurrency.current.value * float_fix2(ccy_buy.buy) / float_fix2(ccy_sell.buy)).toFixed(2)
-        }
+    secondCurrency.current.value = (firstCurrency.current.value / ccy_buy * ccy_sell).toFixed(2)
   }
 
   let calculateSellCost = () => {
-        if (firsdtSelect.current.value === 'UAH' && secondSelect.current.value !== 'UAH') {
-            let ccy_buy = find_ccy(rates, secondSelect.current.value) 
-            firstCurrency.current.value = (secondCurrency.current.value * float_fix2(ccy_buy.buy)).toFixed(2)
-        } else if (firsdtSelect.current.value !== 'UAH' && secondSelect.current.value === 'UAH') {
-            let ccy_sell = find_ccy(rates, firsdtSelect.current.value) 
-            firstCurrency.current.value = (secondCurrency.current.value / float_fix2(ccy_sell.buy)).toFixed(2)
-        } else if (firsdtSelect.current.value === 'UAH' && secondSelect.current.value === 'UAH') {
-            firstCurrency.current.value = secondCurrency.current.value
-        } else if (firsdtSelect.current.value !== 'UAH' && secondSelect.current.value !== 'UAH') {
-            let ccy_buy = find_ccy(rates, secondSelect.current.value)
-            let ccy_sell = find_ccy(rates, firsdtSelect.current.value) 
+    let ccy_buy
+    let ccy_sell
+    firsdtSelect.current.value !== 'UAH' ? ccy_sell = float_fix2(find_ccy(rates, firsdtSelect.current.value).buy) : ccy_sell = 1
+    secondSelect.current.value !== 'UAH' ? ccy_buy = float_fix2(find_ccy(rates, secondSelect.current.value).buy) : ccy_buy = 1
 
-            firstCurrency.current.value = (secondCurrency.current.value * float_fix2(ccy_sell.buy) / float_fix2(ccy_buy.buy)).toFixed(2)
-        }
+    firstCurrency.current.value = (secondCurrency.current.value / ccy_buy * ccy_sell).toFixed(2)
   }
 
   return (
     <div className="App">
 
      {/* HEADER */}
-     
+
       <div className='header_main'>
         <div className='header_logo'>
             Exchange Now
@@ -106,7 +90,7 @@ function App() {
                 <input type='text' ref={firstCurrency} placeholder='0' onChange={calculateBuyCost}/>
             </div>
 
-            <img src={exchange} alt='exchange image' />
+            <image src={exchange} alt='exchange image' />
 
             <div className='currency_box second_currency'>
                 <select 
