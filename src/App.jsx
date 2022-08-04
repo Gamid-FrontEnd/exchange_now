@@ -74,8 +74,6 @@ function App() {
                         firstCurrency.current.value = null
                         secondCurrency.current.value = null
                         firsdtSelect.current.value !== 'UAH' ? ccy_sell = float_fix2(find_ccy(rates, firsdtSelect.current.value).buy) : ccy_sell = 1
-                        secondSelect.current.value !== 'UAH' ? ccy_buy = float_fix2(find_ccy(rates, secondSelect.current.value).buy) : ccy_buy = 1
-
                     }}>
                     {rates.map(rate => 
                         rate.ccy !== 'BTC' && <option key={rate.buy} value={rate.ccy}>{rate.ccy}</option>
@@ -94,7 +92,6 @@ function App() {
                     onChange={() => {
                         firstCurrency.current.value = null
                         secondCurrency.current.value = null
-                        firsdtSelect.current.value !== 'UAH' ? ccy_sell = float_fix2(find_ccy(rates, firsdtSelect.current.value).buy) : ccy_sell = 1
                         secondSelect.current.value !== 'UAH' ? ccy_buy = float_fix2(find_ccy(rates, secondSelect.current.value).buy) : ccy_buy = 1
                     }}>
                     {rates.map(rate => 
